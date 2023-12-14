@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>ServeUP/Sign up</title> 
+    
+    <link rel="stylesheet" href="./style.css">
+<script> 
+    function saveTextAndRedirect() { 
+        var inputText1 = document.getElementById("name").value; 
+        var inputText2 = document.getElementById("lastname").value; 
+        var inputText3 = document.getElementById("username").value; 
+        var inputText4 = document.getElementById("date").value; 
+        var inputText5 = document.getElementById("phone").value; 
+        var inputText6 = document.getElementById("email").value; 
+        var inputText7 = document.getElementById("password").value; 
+         
+        var inputText = inputText1 + "\n" + inputText2 + "\n" + inputText3 + "\n" + inputText4 + "\n" + inputText5 + "\n" + inputText6 + "\n" + inputText7 + "\n";
+        var blob = new Blob([inputText], { type: 'text/plain' }); 
+        var url = URL.createObjectURL(blob); 
+        var a = document.createElement('a'); 
+        a.href = url; 
+        a.download = 'sign up.txt'; 
+        a.click(); 
+        URL.revokeObjectURL(url); 
+        
+    } 
+</script> 
+</head> 
+<body > 
+    <meta charset="UTF-8">
+    <h1> Sign up </h1>
+       
+        <div class="header">
+            
+            <p></p> 
+            <label for="name">Name:</label1> 
+            <input placeholder="Name" type="text" id="name" name="name"> 
+          <p><p> 
+            <label for="lastname">Lastname:</label2> 
+            <input placeholder="Lastname" type="text" id="lastname" name="lastname"> 
+           <p></p> 
+            <label for="username">Username:</label3> 
+            <input placeholder="Username" type="text" id="username" name="username"> 
+          <p></p>
+            <label for="date of birthday">Date of birthday:</label4>
+            <input placeholder="Date" type="date" id="date" name="date">
+          <p><p> 
+            <label for="phone">Phone number:</label5> 
+            <input placeholder="Phone" type="text" id="phone" name="phone"> 
+          <p><p> 
+            <label for="email">Email:</label6> 
+            <input placeholder="Email" type="email" id="email" name="email"> 
+          <p><p> 
+            <label for="password">Password:</label7> 
+            <input placeholder="Password" type="password" id="password" name="password"> 
+            
+        </div>
+        <div class="btn">
+            <button class="button" onclick="saveTextAndRedirect()">Save</button> 
+        </div>
+
+</body>
